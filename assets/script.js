@@ -1,122 +1,88 @@
-var questionContainerElement = document.getElementById('question-container')
-var questionElement = document.getElementById('question-container')
-var answerButtonsElement = document.getElementById('answer-buttons')
-var playButtonElement = document.getElementById('play-btn')
-var choiceButton = document.querySelectorAll('.btn')
-console.log (choiceButton)
+var count = 60;
+var questionNumber = 0;
+var score = 0;
 
+var questionContainer = document.querySelector("#question-container");
+var question = document.querySelector("#question");
+var startButtonElement = document.querySelector("#start-btn")
+var btnContainer = document.querySelector("#answer-buttons")
+var buttons = document.querySelectorAll(".answer-button")
+var feedback = document.querySelector("#feedback");
+var inputEl = document.querySelector(".input")
+var timerEl = document.getElementById('countdown');
+var mainEl = document.getElementById('main');
 
-
+console.log(buttons);
+var index = 0;
+    
 var questionsArr = [
     {
-        question: "What color is the sky?",
-        answers: ["blue","red","green","black"], 
-        correct: "blue"
+        question: "Which Coffee Shop does the CIA headquarters own? (Fun Fact: baristas don’t write names on the cups)",
+        answers: ["Dunkin'Donuts","Starbucks","Pete's Coffee & Tea","Tully’s Coffee"], 
+        correct: "Starbucks"
     
     },     {
-        question: "What color is the ground?",
-        answers: ["blue","red","green","black"], 
-        correct: "blue"
+        question: "What Animal has the most Neck Bones?",
+        answers: ["Sloth","Aligator","Giraffe","Horse"], 
+        correct: "Sloth"
 
     },     {
-        question: "What color is the tree?",
-        answers: ["blue","red","green","black"], 
-        correct: "blue"
+        question: "What is hotter than the Sun?",
+        answers: ["Your Crush","Volcanic lava","Lightning","Fire"], 
+        correct: "Lightning"
 
     },     {
-        question: "What color is the trashcan?",
-        answers: ["blue","red","green","black"], 
-        correct: "blue"
+        question: "Most people fall asleep in how many minutes?",
+        answers: ["5","30","7","45"], 
+        correct: "7"
 
 },
 ]
 
-var questionNumber = 0
-console.log (questionsArr[questionNumber].question)
-questionNumber++
-console.log (questionsArr[questionNumber].question)
-questionNumber++
-console.log (questionsArr[questionNumber].question)
-questionNumber++
-console.log (questionsArr[questionNumber].question)
-
-
-
 function startGame() {
-    console.log('Started')
-    var playContainerElement = document.querySelector('.play-container') 
-    playContainerElement.classList.add('hidden')
+    console.log("startGame")
+    var playContainerElement = document.querySelector(".question-container") 
+    var interval = setInterval(function(){
+        document.getElementById('count').innerHTML=count;
+        count--;
+        if (count === 0){
+          clearInterval(interval);
+          document.getElementById('count').innerHTML='Done';
+          // or...
+          alert("You're out of time!");
+        }
+      }, 1000);
+    questionContainer.classList.remove("hidden")
+    startButtonElement.classList.add("hidden")
+    showQuestion();
 }
-    playButtonElement.addEventListener('click', startGame)
-// --------------------------------------------------------------------------
+    startButtonElement.addEventListener('click', startGame)
 
-var countDownDate = new Date("Jul 25, 2021 16:37:52").getTime();
+// Q & A Appearance-----------------------------------------
 
+function showQuestion() {
+    question.textContent = questionsArr[questionNumber].question;
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].textContent = questionsArr[questionNumber].answers[i];
+    }
+    
+};
+ function checkAnswer(e) {
+    var type = e.target.type;
+    if(type==="submit"){
+        var clickedAnswer = e.target.textContent;
 
-// function setNextQuestion() {
-//     resetState()
-//     showQuestion(shuffledQuestions[currentQuestionIndex])
-// }
+        // Do code here to check for right or wrong answer
 
-// function showQuestion(question) {
-//     questionElement.innerText= question.question
-//     question.answers.forEach(answer=> {
-//         var button = document.createElement('button')
-//         button.innerText = answer.text
-//         button.classList.add('btn')
-//             if (answer.correct) {
-//          button.dataset.correct = answer.correct 
-//     }
-//              button.addEventListener('click', selectAnswer)
-//               answerButtonsElement.appendChild(button)
-//     })
-// }
-// function resetState() {
-//     clearStatusClass(document.body)
-//     nextButton.classList.add('hide')
-//     while (answerButtonsElement.firstChild) {
-//         answerButtonsElement.removeChild
-//         (answerButtonsElement.firstChild)
-//     }
-// }
+        // If right answer up the score
 
-// function selectAnswer(e) {
-//         var selectedButton = e.target
-//         var correct = selectedButton.dataset.correct
-//         setStatusClass(document.body, correct)
-//     Array.from(answerButtonsElement.children).forEach(button => {
-//         setStatusClass(button, button.dataeset.correct)
-//     })
+        // If wrong answer decrement time by 5 seconds
 
-//     if(shuffledQuestions.length > currentQuestionIndex +1) {
-//     nextButton.classList.remove('hide')
-// }else {
-//     startButton.innerText = ('restart')
-//     startButton.classList.remove('hide')
-// }
+        // Increment question number to move to next question
 
+        showQuestion();
+    }
+ } 
 
-// function setStatusClass(element, correct) {
-//     clearStatusClass(element)
-//     if (correct) {
-//            element.classList.add('correct')
-//         } else {
-//            element.classList.add('wrong')
-//     }
-// }
+ btnContainer.addEventListener('click',checkAnswer);
  
-// function clearStatusClass(element) {
-//     element.classList.remove('correct')
-//     element.classList.remove('wrong')
-// }
-
-// var questions = [
-//     {
-//         question: 'what is 1+82',
-//         answers: [
-//             { text: '82', correct: true },
-//             { text: '22', correct: false }
-//         ]
-//     }
-// ]
-// }
