@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <link href="./assets/style.css" rel="stylesheet">
+    
 
     <title>The Coder Quiz</title>
 </head>
+
 <body>
+    <style>
+
+        .body {
+     background-image: url("./assets/images/code.jpeg");
+             }
+    
+    </style>
+    <div> <a href="/highscores.html" class="highscore-btn">High Scores </a></div>
     <div class="container">
-    <div id="question-container" class"hide">
-        <div id"questions">Question</div>
-        <div id="answer-buttons" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
+        
+        <div id="home" class="flex-column flex-center">
+            <div class="play-container">
+                <h1> Are you ready?</h1>
+                <button id="play-btn">Play</button>
+            </div>
+          
+  
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">a</button>
+                <button class="btn">b</button>
+                <button class="btn">c </button>
+                <button class="btn">d </button>
             </div>
 
-    <div class="controls">
-        <button id="start-btn" class="start-btn btn">start</button>
-        <button id="next-btn" class="next-btn btn hide">next</button>
-        </div>
-    </div>
-</body>
+            <div class="controls"></div>
+
+           
+     </div>
+     </div>
+     <script src="./assets/script.js"></script>
+    </body>
 </html>
