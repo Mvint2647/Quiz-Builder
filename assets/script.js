@@ -52,6 +52,7 @@ function startGame() {
           alert("You're out of time!");
         }
       }, 1000);
+      
     questionContainer.classList.remove("hidden")
     startButtonElement.classList.add("hidden")
     showQuestion();
