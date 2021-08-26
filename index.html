@@ -14,19 +14,20 @@
   </head>
   <body>
  
-    <div id="count"></div>
-    <section>
-      <h1>Are You Ready!?</h1>
-    </section>
-    
-        </header>
+    <div class="flex-container">
+     
+    <div class="container2" class="hidden">
+      <h1>Short Random Fact Quiz!?</h1>
+      <div id="count" class="timer"></div>
+    </div>
+
   <style>
     body {
       background-image: url("./assets/images/code.jpeg");
       }
   </style>
           
-  <div class="container">
+          <div class="container">
       <button id="start-btn" class="start-btn btn">Start</button>
       <div id="question-container" class="hidden">
         <div id="question">Question :</div>
@@ -40,18 +41,19 @@
       </div>
     </div>
 
-    <div id="enterscore" class="hidden">
-      <p id= "current score"></p>
+  <div class="container1">
+  <form action="/index2.html" class="hidden">
+    <label for="fname">First name: </label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name: </label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+</div>
 
-<textarea id="Initials" name="score">
-
-</textarea>
-<button id="submit score"></button>
 
 
-    <h2>DONE!</h2>
-  </div>
 
- <script src="./assets/script.js"></script>
+   <script src="./assets/script.js"></script>
   </body>
 </html>
