@@ -1,7 +1,7 @@
 var count = 30;
 var questionNumber = 0;
 var score = 0;
-var enterscore = document.querySelector("#enterscore")
+var enterScore = document.querySelector("#enterScore")
 var questionContainer = document.querySelector("#question-container");
 var question = document.querySelector("#question");
 var startButtonElement = document.getElementById("start-btn");
@@ -40,7 +40,7 @@ var questionsArr = [
     correct: "7",
   },
 ];
-
+// --------------------------------------
 function startGame() {
   console.log("startGame");
   var playContainerElement = document.querySelector(".question-container");
@@ -48,7 +48,7 @@ function startGame() {
     document.getElementById("count").innerHTML = count;
     count--;
     if (count === 0 || questionNumber === questionsArr.length) {
-      document.getElementById("count").innerHTML = " ";
+      document.getElementById("count").innerHTML = "Complete!";
       clearInterval(interval);
       alert("Session Finished!");
       alert("No more Time!");
@@ -60,8 +60,11 @@ function startGame() {
   showQuestion();
 }
 startButtonElement.addEventListener("click", startGame);
-
-
+// --------------------------------------
+function endGame(){
+  enterScore.classList.remove("hidden")
+}
+// --------------------------------------
 function showQuestion() {
     if (questionNumber === questionsArr.length) {
         score = count;
@@ -74,6 +77,7 @@ function showQuestion() {
         
     }
 }
+// -------------------------------------
 function checkAnswer(event) {
    var correctAnswer = questionsArr[questionNumber].correct;
 
@@ -81,18 +85,19 @@ function checkAnswer(event) {
       console.log("correctAnswer");
     } else {
       console.log("wrongAnswer");
-        count=count-5;
+        count=count-10;
     }
     questionNumber++;
     showQuestion();
-}
+
+  }
 
 btnContainer.addEventListener("click", checkAnswer);
-
+// --------------------------------------
 
 function endGame(){
-  enterscore.classList.remove("hidden")
-  endGame.remove.questionContainer.questionContainer === enterscore.classList;
+  enterScore.classList.remove("hidden")
+ 
 }
 
-btnContainer.addEventListener("click", endGame);
+// btnContainer.addEventListener("click", );

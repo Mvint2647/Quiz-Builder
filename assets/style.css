@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
- 
+
   font-family:'Bangers', 'cursive';
   font-size: 25px;
   margin:auto;
@@ -25,11 +25,11 @@ margin-top: 60px;
 
 .count {
     color:white;
+    display: flexbox;
 }
 
 .btn:hover {
   border-color: #00ff08;
-  border-block-color: #00ff08;
 }
 
 .btn-grid {
@@ -46,8 +46,8 @@ margin-top: 60px;
   width: 100%;
   font-size:40px;
   height: 60px;
-  color: rgba(106, 0, 0, 0.721);
-  background-color: rgba(21, 0, 255, 0.521);
+  color: rgba(255, 255, 255, 0.721);
+  background-color: rgba(22, 157, 4, 0.701);
   outline: none;
   font-size:larger;  
 }
@@ -85,7 +85,7 @@ h1{
 
 .container {
   background-color: rgba(255, 255, 255, 0.541);
-  box-shadow: rgba(13, 0, 255, 0.774)  0px  0px 5px 5px;
+  box-shadow: rgba(255, 255, 255, 0.356)  0px  0px 5px 5px;
 }
 
 
@@ -94,7 +94,6 @@ h1{
   color: white;
   transition-duration: 0.4s;
   cursor: pointer;
-  font-size: 30px;
 }
 
 .start-btn {
