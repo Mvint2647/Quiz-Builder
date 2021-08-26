@@ -1,4 +1,4 @@
-var count = 15;
+var count = 30;
 var questionNumber = 0;
 var score = 0;
 var enterscore = document.querySelector("#enterscore")
@@ -76,9 +76,13 @@ function showQuestion() {
     }
 }
 function checkAnswer(event) {
-    var correctAnswer = questionsArr[questionNumber].correct;
-    if (!event.target.textContent === correctAnswer) {
-        count-=5;
+   var correctAnswer = questionsArr[questionNumber].correct;
+
+    if (event.target.textContent === correctAnswer) {
+      console.log("correctAnswer");
+    } else {
+      console.log("wrongAnswer");
+        count=count-5;
     }
     questionNumber++;
     showQuestion();
