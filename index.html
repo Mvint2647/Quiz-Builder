@@ -9,19 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
-      rel="stylesheet"
-    />
-    <!-------------------title-------------------------------------->
+      rel="stylesheet"/>
     <title>The Coder Quiz</title>
   </head>
-
-  <!---------body------------------------------------------------->
   <body>
-    <!---------timer------------------------------------------------>
-   
-    <!---------container-------------------------------------------->
-
-    <div class="container">
+ 
+    <div id="count"></div>
+    <h1>Are You Ready!?</h1>
+        </header>
+  <style>
+    body {
+      background-image: url("./assets/images/code.jpeg");
+      }
+  </style>
+          
+  <div class="container">
       <button id="start-btn" class="start-btn btn">Start</button>
       <div id="question-container" class="hidden">
         <div id="question">Question :</div>
@@ -35,23 +37,8 @@
       </div>
     </div>
 
-    <!-------------script java--------------------------------------->
-    <script src="./assets/script.js"></script>
-    <!----------------------end of body------------------------------>
+    <div id="enterscore" class="hidden"><h2>DONE!</h2></div>
+
+ <script src="./assets/script.js"></script>
   </body>
 </html>
-
-<!-- -----------------------------------------  
-              <style>
-                body {
-                  background-image: url("./assets/images/code.jpeg");
-                }
-            </style>
-        <header>
-            <h2 class="Are You Ready!?">Are You Ready!?</h2>
-        </header>
-           
-            
-            <div><a href="/highscores.html" class="highscore-btn">High Scores </a></div>
-           
-  ---------------------------------------   -->
