@@ -99,5 +99,3 @@ function endGame(){
   enterScore.classList.remove("hidden")
  
 }
-
-// btnContainer.addEventListener("click", );
