@@ -1,4 +1,4 @@
-var count = 20;
+var count = 15;
 var questionNumber = 0;
 var score = 0;
 var enterscore = document.querySelector("#enterscore")
@@ -20,10 +20,7 @@ var questionsArr = [
     question:
       "Which Coffee Shop does the CIA headquarters own? (Fun Fact: baristas don’t write names on the cups)",
     answers: [
-      "Dunkin'Donuts",
-      "Starbucks",
-      "Pete's Coffee & Tea",
-      "Tully’s Coffee",
+      "Dunkin'Donuts", "Starbucks", "Pete's Coffee & Tea", "Tully’s Coffee",
     ],
     correct: "Starbucks",
   },
@@ -50,7 +47,7 @@ function startGame() {
   var interval = setInterval(function () {
     document.getElementById("count").innerHTML = count;
     count--;
-    if (count === 0) {
+    if (count === 0 || questionNumber === questionsArr.length) {
       document.getElementById("count").innerHTML = "Out of Time!";
       clearInterval(interval);
       alert("You're out of time!");
@@ -84,10 +81,14 @@ function checkAnswer(event) {
         count-=5;
     }
     questionNumber++;
-    
-  
     showQuestion();
 }
 
 btnContainer.addEventListener("click", checkAnswer);
 
+
+function endGame(){
+  enterscore.classList.remove("hidden")
+  }endGame.remove.questionContaineruestionContainer
+
+btnContainer.addEventListener("click", endGame);
