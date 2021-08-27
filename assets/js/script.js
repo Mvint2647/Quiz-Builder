@@ -108,8 +108,9 @@ function checkAnswer(event) {
     var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
       highScores.push(score);
-      localStorage.setItem("highScore")
+      localStorage.setItem("highScores")
     }
 
+    btnContainer.addEventListener("click", enterScore);
 
    
