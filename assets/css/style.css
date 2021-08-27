@@ -3,9 +3,13 @@
 *::after {
 
   font-family:'Bangers', 'cursive';
-  font-size: 25px;
   margin:auto;
 }
+
+p{
+  font-size: 50px;;
+}
+
 
 body {
   padding: 0;
@@ -18,18 +22,13 @@ body {
   font-size: 20px;
 }
 
-h1 {
-display: flex;
-margin-top: 60px;
-}
-
 .count {
     color:white;
     display: flexbox;
 }
 
 .btn:hover {
-  border-color: #00ff08;
+  border-color: #ff0000;
 }
 
 .btn-grid {
@@ -47,7 +46,7 @@ margin-top: 60px;
   font-size:40px;
   height: 60px;
   color: rgba(255, 255, 255, 0.721);
-  background-color: rgba(22, 157, 4, 0.701);
+  background-color: rgba(255, 0, 0, 0.701);
   outline: none;
   font-size:larger;  
 }
@@ -67,25 +66,36 @@ max-height: 100%;
 
 h1{
   font-size: 60px;
+  color:rgb(255, 255, 255);
+  background-color:rgba(255, 0, 0, 0);
+  padding:50px 50px 50px 50px;
+ 
 }
+
+
 .container2{
   color: rgb(255, 255, 255);
+  font-size: 30px;
+  padding:10px;
 }
 
   .container1 {
     background-color: rgba(255, 255, 255, 0.541);
-    box-shadow: rgba(34, 255, 0, 0.774)  0px  0px 5px 5px;
-
+    box-shadow: rgba(255, 255, 255, 0)  0px  0px 5px 5px;
+    justify-content: center;
+    border:10px;
+    padding: 10px 10px 10px 10px;
   }
 
 .result {
-    box-shadow: black;
+    box-shadow: rgb(255, 255, 255);
     font-size: 20px;
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.541);
-  box-shadow: rgba(255, 255, 255, 0.356)  0px  0px 5px 5px;
+  background-color: rgba(255, 255, 255, 0.466);
+  padding: 10px 10px 10px 10px;
+
 }
 
 
@@ -94,6 +104,8 @@ h1{
   color: white;
   transition-duration: 0.4s;
   cursor: pointer;
+  text-align: center;
+  border-radius: 50px;
 }
 
 .start-btn {
@@ -104,7 +116,7 @@ h1{
 
 .start-btn:hover {
   color: white;
-  font-size: 30px;
+  font-size: 50px;
 }
 .hidden {
   display: none;
