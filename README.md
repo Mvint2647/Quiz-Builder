@@ -36,5 +36,5 @@ A trial of a Quiz-Builder
 ## Usage
 
 ## Badges
-(HTML, Style.CSS)
+(HTML, Style.CSS & JAVASCRIPT)
 
