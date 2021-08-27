@@ -82,6 +82,7 @@ function checkAnswer(event) {
    var correctAnswer = questionsArr[questionNumber].correct;
 
     if (event.target.textContent === correctAnswer) {
+    score += 10 
       console.log("correctAnswer");
     } else {
       console.log("wrongAnswer");
@@ -92,10 +93,26 @@ function checkAnswer(event) {
 
   }
 
-btnContainer.addEventListener("click", checkAnswer);
-// --------------------------------------
+  btnContainer.addEventListener("click", checkAnswer);
+  // --------------------------------------
+  
+  function endGame(){
+    enterScore.classList.remove("hidden")
+}
 
-function endGame(){
-  enterScore.classList.remove("hidden")
- 
+  // --------------------------------------
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+var username = document.querySelector("username");
+var saveScorebtn = document.querySelector("saveScoreBtn");
+var finalScore = document.querySelector("finalScore");
+var mostRecentScore = localStorage.getItem("mostRecentScore");
+
+finalScore.innerText = mostRecentScore;
+username.addEventListener("keyup", () => {
+  saveScorebtn.isabled = !username.value;
+})
+
+saveHighScores = e => {
+  highScores.push(score);
 }
